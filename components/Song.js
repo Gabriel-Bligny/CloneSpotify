@@ -20,7 +20,7 @@ function Song({ order, track }) {
 
   return (
     <div className='grid grid-cols-2 text-gray-500 py-4 px-5 hover:bg-gray-900 rounded-lg cursor-pointer' onClick={playSong}>
-      <div className='flex items-center space-x-4'>
+      <div className='flex items-center space-x-4 justify-between'>
         <p>{(order + 1) < 10 ? "0" + (order + 1) : order + 1 }</p>
         <img className='h-10 w-10' src={track.track.album.images[0].url} alt="" />
         <div>
@@ -32,14 +32,14 @@ function Song({ order, track }) {
           </p>
         </div>
 
-        <div className='flex items-center justify-between ml-auto md:ml-0'>
+        <div className='flex items-center justify-between ml-auto md:ml-0 min-w-[30%]'>
           <p className='hidden md:inline'>
             {track.track.album.name}
           </p>
+        </div>
           <p>
             {millisToMinutesAndSeconds(track.track.duration_ms)}
           </p>
-        </div>
 
       </div>
     </div>
